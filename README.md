@@ -1,4 +1,5 @@
-# NgRxTraining
+# NgRx-training
+A learning project for creating a simple application using the NgRx library
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
 

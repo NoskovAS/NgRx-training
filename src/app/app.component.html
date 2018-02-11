@@ -1,6 +1,9 @@
 <mat-card class="card-demo mat-card">
   <mat-card-content>
     <app-car-form></app-car-form>
-    <app-car></app-car>
+    <app-car
+      [car]="c"
+      *ngFor="let c of cars"
+    ></app-car>
   </mat-card-content>
 </mat-card>

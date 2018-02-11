@@ -11,4 +11,12 @@ export class AppComponent {
     new Car('Ford', '12.01.18', 'Focus', false, 1),
     new Car('Mersedes', '07.12.14', 'GL500', false, 2)
   ];
+
+  onAdd(car: Car) {
+    this.cars.push(car);
+  }
+
+  onDelete(car: Car) {
+    this.cars = this.cars.filter(c => c.id !== car.id);
+  }
 }

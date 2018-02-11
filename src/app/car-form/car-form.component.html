@@ -1,27 +1,31 @@
 <div fxLayout="row" fxLayoutAlign="center none">
     <h1 style="font-family: 'Open Sans Condensed', sans-serif; font-size: 80px; margin: 0;">Car Shop</h1>
 </div>
-<div fxLayout="row" fxLayoutAlign="space-around none">
-    <form [formGroup]="carForm" class="example-form" style="margin-bottom: 50px;">
-      <div fxLayout="column" fxLayoutAlign="space-between none" >
-          <div>
-              <mat-form-field class="example-full-width" style="width: 500px; margin-bottom: 20px;">
-                    <input matInput placeholder="Car name" formControlName="carName">
-                    <mat-error *ngIf="carForm.controls['carName'].hasError('required')">
-                        Please enter a car name
-                    </mat-error>        
-                </mat-form-field>
-          </div>
-          <div>
-              <mat-form-field class="example-full-width" style="width: 500px;">
-                    <input matInput placeholder="Car model" formControlName="carModel">
-                    <mat-error *ngIf="carForm.controls['carModel'].hasError('required')">
-                        Please enter a car model
-                    </mat-error>
-                </mat-form-field>
-          </div>
-      </div>
-    </form>
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="center">
+    <div fxFlex="30%"></div>
+    <div fxFlex>
+        <form [formGroup]="carForm" class="example-form" style="margin-bottom: 50px;">
+            <div fxLayout="column" fxLayoutAlign="space-between none" style="margin: 0px 10px 0px 10px;">
+                <div>
+                    <mat-form-field class="example-full-width" style="width: 100%; margin-bottom: 20px;">
+                            <input matInput placeholder="Car name" formControlName="carName">
+                            <mat-error *ngIf="carForm.controls['carName'].hasError('required')">
+                                Please enter a car name
+                            </mat-error>        
+                        </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" style="width: 100%;">
+                            <input matInput placeholder="Car model" formControlName="carModel">
+                            <mat-error *ngIf="carForm.controls['carModel'].hasError('required')">
+                                Please enter a car model
+                            </mat-error>
+                        </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div fxFlex="30%"></div>
 </div>
 <div fxLayout fxLayoutAlign="center none" fxLayoutGap="30px" style="margin-bottom: 20px;">
     <button fxFlex=30% (click)="onAdd()" mat-raised-button color="primary">Add car</button>

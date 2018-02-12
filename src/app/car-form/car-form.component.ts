@@ -1,7 +1,10 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { Car } from '../car';
+import { AppState } from '../ngrx/app.state';
+import { Store } from '@ngrx/store';
+import { AddCar } from '../ngrx/cars.action';
 
 @Component({
   selector: 'app-car-form',
@@ -14,9 +17,7 @@ export class CarFormComponent implements OnInit {
 
   private id: number = 2;
 
-  @Output() addCar = new EventEmitter<Car>();
-
-  constructor() {
+  constructor(private store: Store<AppState>) {
     this.carForm = new FormGroup({
       carName: new FormControl('', Validators.required),
       carModel: new FormControl('', Validators.required)
@@ -45,7 +46,8 @@ export class CarFormComponent implements OnInit {
       this.id
     );
 
-    this.addCar.emit(car);
+    this.store.dispatch(new AddCar(car));
+
     this.carForm.reset();
   }
 

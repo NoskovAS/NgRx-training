@@ -1,10 +1,7 @@
 <mat-card class="card-demo mat-card" style="padding: 0;">
   <mat-card-content>
-    <app-car-form
-    (addCar)="onAdd($event)"
-    ></app-car-form>
+    <app-car-form></app-car-form>
     <app-car
-      (deleteCar)="onDelete($event)"
       [car]="c"
       *ngFor="let c of (carState | async).cars"
     ></app-car>
